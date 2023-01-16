@@ -38,21 +38,14 @@ function comparadorDeCartas() {
 }
 
 function jogo() {
-    //criar baralho
+
     for(let i = 0; i < (qntcartas / 2); i++){
         let carta = todasAsCartas[i];
         baralhoDeCartas.push(carta);
         baralhoDeCartas.push(carta);
     }
-    console.log(baralhoDeCartas);
 
-    //embaralhar esse baralho
     baralhoDeCartas.sort(comparadorDeCartas);
-
-    console.log(baralhoDeCartas);
-
-
-    //distribuir as cartas
 
 }
 
@@ -65,3 +58,6 @@ function perguntaraojogador(){
     }
 }
 perguntaraojogador()
+jogo()
+comparadorDeCartas()
+destribuirbaralho()
