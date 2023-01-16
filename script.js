@@ -1,21 +1,60 @@
 let qntcartas;
 
-const 
-function jogoIniciado(){
+const todasAsCartas = [
+    "bobrossparrot",
+    "explodyparrot",
+    "fiestaparrot",
+    "metalparrot",
+    "revertitparrot",
+    "tripletsparrot",
+    "unicornparrot"
+];
 
-//criar baralho
+const baralhoDeCartas = [];
 
 
+function destribuirbaralho() {
+    const tabuleiroCartas = document.querySelector('.tabuleiroCartas');
 
-//embaralhar
+    for(let i = 0; i < baralhoDeCartas.length; i++){
+        let cartasSelecionadas = `
+            <li class="carta">
+                <div class="virada-cima face">
+                    <img src="front.png">
+                </div>
+                <div class="virada-baixo face">
+                    <img src='${baralhoDeCartas[i]}.gif'>
+                </div>
+            </li>       
+            `;
 
-//distribuir cartas
-
+            tabuleiroCartas.innerHTML += cartasSelecionadas;
+    }
 }
 
 
+function comparadorDeCartas() {
+    return Math.random() - 0.5;
+}
+
+function jogo() {
+    //criar baralho
+    for(let i = 0; i < (qntcartas / 2); i++){
+        let carta = todasAsCartas[i];
+        baralhoDeCartas.push(carta);
+        baralhoDeCartas.push(carta);
+    }
+    console.log(baralhoDeCartas);
+
+    //embaralhar esse baralho
+    baralhoDeCartas.sort(comparadorDeCartas);
+
+    console.log(baralhoDeCartas);
 
 
+    //distribuir as cartas
+
+}
 
 
 function perguntaraojogador(){
